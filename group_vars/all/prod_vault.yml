@@ -1,0 +1,5 @@
+vault_user_password: "prod_pass"
+vault_api_key: "prod_key_api"
+vault_db_credentials:
+  username: "prod_db_user"
+  password: "prod_db_pass"
