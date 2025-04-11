@@ -1,0 +1,5 @@
+vault_user_password: "dev_pass"
+vault_api_key: "dev_key_api"
+vault_db_credentials:
+  username: "dev_db_user"
+  password: "dev_db_pass"
