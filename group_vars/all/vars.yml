@@ -1,0 +1,4 @@
+user_password: "{{ vault_user_password }}"
+api_key: "{{ vault_api_key }}"
+db_user: "{{ vault_db_credentials.username }}"
+db_pass: "{{ vault_db_credentials.password }}"
