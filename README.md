@@ -1,24 +1,22 @@
-# ansible-vault-lab
-
 Ansible Vault Assignment 4
 Repository Setup
 1.	Creating GitHub Repository called ansible-vault-lab
-  a. Create manually
-3.	Cloning Repository
+ 
+2.	Cloning Repository
 a.	git clone https://github.com/gitkhanab/ansible-vault-lab
 b.	cd ansible-vault-lab
 c.	git init
-4.	Creating directory structure
+3.	Creating directory structure
 a.	mkdir -p group_vars/all inventory playbooks
 b.	touch group_vars/all/{vault.yml,vars.yml}
 c.	touch inventory/production.ini
 d.	touch playbooks/{create_user.yml,configure_service.yml}
 e.	touch README.md requirements.txt .gitignore
-5.	Commit
+4.	Commit
 a.	Git add .
 b.	Git commit -m “First Commit – directory structure”
 c.	Git push origin main
-6.	Tree to verify
+5.	Tree to verify
 Basic Vault Operations
 1.	Creating encrypted vault.yml
 a.	ansible-vault create group_vars/all/vault.yml
@@ -76,10 +74,12 @@ iii.	vault_db_credentials:
 iv.	  username: "prod_db_user"
 v.	  password: "prod_db_pass
 3.	Playbook documentation
-a.	ansible-playbook playbooks/create_user.yml --ask-vault-pass \
-b.	  -e "@group_vars/all/dev_vault.yml" -e "@group_vars/all/vars.yml"
-c.	ansible-playbook playbooks/configure_service.yml --ask-vault-pass \
-d.	  -e "@group_vars/all/dev_vault.yml" -e "@group_vars/all/vars.yml"
+a.	Example 1:
+i.	ansible-playbook playbooks/create_user.yml --ask-vault-pass \
+ii.	  -e "@group_vars/all/dev_vault.yml" -e "@group_vars/all/vars.yml"
+b.	Example 2:
+i.	ansible-playbook playbooks/configure_service.yml --ask-vault-pass \
+ii.	  -e "@group_vars/all/dev_vault.yml" -e "@group_vars/all/vars.yml"
 Extra
 1.	.gitignore
 a.	*.retry
@@ -91,3 +91,9 @@ f.	dev_vault.yml
 g.	prod_vault.yml
 h.	*.swp
 2.	No committing vault passwords and variables in plaintext
+3.	Password Management
+a.	For adding to .gitignore
+i.	echo "password" > .vault-pass
+b.	ansible-playbook playbooks/create_user.yml --vault-password-file ~/.vault_pass.txt
+c.	In gitignore:
+i.	group_vars/all/*vault.yml
