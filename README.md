@@ -120,6 +120,12 @@ touch README.md requirements.txt .gitignore
      ansible-playbook playbooks/create_user.yml --vault-password-file ~/.vault_pass.txt
 
 
+3. **Make sure to commit the changes:**
+   git add .
+   git commit -m "Added setup files and configuration"
+   git push origin main
+
+
 
 
 
