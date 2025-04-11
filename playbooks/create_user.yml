@@ -1,0 +1,11 @@
+- name: Create user
+  hosts: all
+  become: true
+  vars_files:
+    - ../group_vars/all/vars.yml
+    - ../group_vars/all/vault.yml
+  tasks:
+    - name: Create user
+      ansible.builtin.user:
+        name: user
+        password: "{{ user_password | password_hash('sha512') }}"
