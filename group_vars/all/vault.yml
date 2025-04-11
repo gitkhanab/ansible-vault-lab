@@ -1,0 +1,5 @@
+vault_user_password: "secure_password123"
+vault_api_key: "api_key_123456"
+vault_db_credentials:
+  username: "db_admin"
+  password: "db_pass_123"
